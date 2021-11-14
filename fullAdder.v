@@ -28,6 +28,22 @@ module fullAdder(a,b,cin,s,cout);
           cout = (a&b)|(a&cin)|(b&cin);
         end
 endmodule
+
+//Using two half adders
+module FullAdder(a,b,cin,s,cout);
+    input a,b,cin;
+    output s,cout;
+    halfAdder ha1(a,b,s1,c1); //instantiation
+    halfAdder ha2(s1,cin,s,c2);
+    or g1(c,c1,c2);
+endmodule
+
+module halfAdder(a,b,s,c);
+    input a,b;
+    output s,c;
+    xor (s,a,b);
+    and (c,a,b);
+endmodule
     
 
 
