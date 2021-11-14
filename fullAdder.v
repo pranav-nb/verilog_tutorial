@@ -33,6 +33,7 @@ endmodule
 module FullAdder(a,b,cin,s,cout);
     input a,b,cin;
     output s,cout;
+    wire s1,c1,c2
     halfAdder ha1(a,b,s1,c1); //instantiation
     halfAdder ha2(s1,cin,s,c2);
     or g1(c,c1,c2);
